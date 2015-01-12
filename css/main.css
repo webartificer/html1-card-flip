@@ -8,9 +8,12 @@
 		-webkit-backface-visibility
 */
 .front, .back {
-	transition: -webkit-transform 1s;
+	transition: -webkit-transform .5s ease-out;
 	-webkit-transform-style: preserve-3d;
 	-webkit-backface-visibility: hidden;
+	-webkit-box-shadow: 0 0 15px #aaaaaa;
+	border: solid 1px #aaa;
+	cursor: pointer;
 }
 
 .front {
@@ -18,11 +21,11 @@
 }
 
 .back {
-	-webkit-transform: rotateY(-180deg);
+	-webkit-transform: rotateY(-540deg);
 }
 
 .portfolio-item {
-	-webkit-perspective: 600px;
+	-webkit-perspective: 900px;
 }
 
 div.portfolio-item  {
@@ -30,15 +33,11 @@ div.portfolio-item  {
 	transform: rotateY(0deg); 
 }
 
-.portfolio-item {
-	position: relative;
-}
-
 .portfolio-item:hover .back {
 	transform: rotateY(0deg);
 }
 .portfolio-item:hover .front {
-	transform: rotateY(180deg);
+	transform: rotateY(540deg);
 }
 
 
