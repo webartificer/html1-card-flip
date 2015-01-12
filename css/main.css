@@ -7,33 +7,45 @@
 		-webkit-transform-style
 		-webkit-backface-visibility
 */
-.portfolio-item div {
+.front, .back {
+	transition: -webkit-transform 1s;
+	-webkit-transform-style: preserve-3d;
 	-webkit-backface-visibility: hidden;
-	transform: rotateY(0deg);
-}
-
-.portfolio-item:hover {
-	transform: rotateY(180deg);
-	transition: 0.6s;
 }
 
 .front {
 	position: absolute;
-	z-index: 1;
-	-webkit-backface-visibility: hidden;
 }
 
 .back {
-	transform: rotateY(-180deg);
-	transition: 0.6s;
+	-webkit-transform: rotateY(-180deg);
 }
 
-.front:hover {
+.portfolio-item {
+	-webkit-perspective: 600px;
+}
+
+div.portfolio-item  {
+	-webkit-backface-visibility: hidden;
+	transform: rotateY(0deg); 
+}
+
+.portfolio-item {
+	position: relative;
+}
+
+.portfolio-item:hover .back {
+	transform: rotateY(0deg);
+}
+.portfolio-item:hover .front {
 	transform: rotateY(180deg);
 }
 
-.back:hover {
-	transform: rotateY(180deg);
-}
+
+
+
+
+
+
 
 
